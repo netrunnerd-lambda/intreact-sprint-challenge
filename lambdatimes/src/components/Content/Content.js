@@ -20,10 +20,6 @@ export default class Content extends Component {
     this.setState({ tabs: tabData, cards: cardData });
   }
 
-  componentDidUpdate() {
-    console.log(this.state);
-  }
-
   changeSelected = tab => {
     this.setState({ selected: tab });
   };
@@ -31,7 +27,7 @@ export default class Content extends Component {
   filterCards = () => {
     const cards = this.state.cards,
           selected = this.state.selected;
-          
+
     return cards.filter(card => card.tab === selected || selected === 'all');
   };
 
