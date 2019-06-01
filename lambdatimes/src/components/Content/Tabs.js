@@ -7,7 +7,7 @@ const Tabs = ({ tabs, selectTabHandler, selectedTab }) => {
     <div className="tabs">
       <div className="topics">
         <span className="title">TRENDING TOPICS:</span>
-        {tabs.map(tab => <Tab tab={tab} selectTabHandler={selectTabHandler} selectedTab={selectedTab} />)}
+        {tabs.map(tab => <Tab key={tab} tab={tab} selectTabHandler={selectTabHandler} selectedTab={selectedTab} />)}
       </div>
     </div>
   );

@@ -1,15 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { PropTypes as types } from 'prop-types';
 import Card from './Card';
 
-const Cards = props => {
+const Cards = ({ cards }) => {
   return (
     <div className="cards-container">
-      {/* Using the cards prop, map over the list creating a 
-          new Card component for each passing the card as the only prop*/}
+      {cards.map(card => <Card key={card.headline} {...card} />)}
     </div>
   )
 }
 
-// Make sure you include prop types for all of your incoming props
+Cards.propTypes = {
+  cards: types.arrayOf(types.object)
+};
 
 export default Cards;
